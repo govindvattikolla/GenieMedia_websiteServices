@@ -42,14 +42,14 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" id='services'>
+    <section className="py-6 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gray-50" id='services'>
       <div className="max-w-7xl mx-auto">
       
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-4">
             Our Services
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-700 text-xl max-w-2xl mx-auto">
             Comprehensive digital solutions to elevate your brand and drive results
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function ServicesSection() {
               <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
                 {service.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 {service.description}
               </p>
 
@@ -94,7 +94,7 @@ export default function ServicesSection() {
         </div>
 
         
-        <div className="text-center mt-16">
+        <div className="text-center mt-10">
           <button className="bg-orange-400 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-black-500/50 transform hover:scale-105 transition-all duration-300">
             Start Your Project
           </button>

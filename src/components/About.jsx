@@ -143,9 +143,9 @@ const AboutUs = () => {
         ref={sectionRef}
         className="bg-gray-100 pt-10 px-6 lg:px-12"  id='about'
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto ">
           {/* Header */}
-          <div className={`mb-8 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
+          <div className={`mb-8 text-center ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
             <h2 className="text-4xl lg:text-6xl font-bold text-orange-500 mb-3">
               About Us
             </h2>

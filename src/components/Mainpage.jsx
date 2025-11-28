@@ -15,7 +15,7 @@ import AboutUs from './About';
 import Testimonials from './Testimonial';
 import Contact from './contact';
 import ServicesSection from './Services';
-import video from "../assets/websiteVideo.mp4"
+import video from "../assets/WebsiteVideo_2.mp4"
 const Mainpage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -103,7 +103,7 @@ const projects = [
           
          
           <Sparkles className="floating-sparkle absolute top-32 left-1/4 text-orange-400 opacity-60" size={24} />
-          <Sparkles className="floating-sparkle absolute top-1/3 right-1/4 text-orange-500 opacity-50" size={20} />
+          <Sparkles className="floating-sparkle hidden absolute  top-1/3 right-1/4 text-orange-500 opacity-50" size={20} />
           <Sparkles className="floating-sparkle absolute bottom-1/3 left-1/3 text-orange-400 opacity-70" size={28} />
         </div>
 
@@ -122,7 +122,7 @@ const projects = [
               <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-normal ">
                 Transform Your{' '}
                 <span className="gradient-text">Digital Presence</span>{' '}
-                with{' '} Magic
+                with{' '} Innovation
               </h1>
 
               <p className="hero-description text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -130,19 +130,17 @@ const projects = [
                 stunning web design, and innovative solutions that deliver real results.
               </p>
 
-              
-              <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="btn-primary group relative px-8 py-4 text-white font-bold rounded-full text-base shadow-xl flex items-center justify-center gap-2 z-10">
-                  Get Started Now
+              <div className="hero-buttons flex flex-row sm:flex-row gap-4 w-80% justify-center lg:justify-start ">
+                <button className="w-42 sm:w-56 btn-primary group relative px-5 py-4 text-white font-bold rounded-full text-base shadow-xl flex items-center justify-center gap-2 z-10">
+                  Get Started
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                 </button>
-                <button className="btn-secondary relative px-8 py-4 text-orange-600 font-bold rounded-full text-base flex items-center justify-center gap-2 z-10">
-                 See Our Portfolio
-                  
+                <button className="w-42 sm:w-50 btn-secondary relative px-6 py-4 text-orange-600 font-bold rounded-full text-base flex items-center justify-center gap-2 z-10">
+                 See Portfolio
                 </button>
               </div>
 
-              <div className="hero-stats grid grid-cols-3 gap-4 pt-8">
+              <div className="hero-stats grid grid-cols-3 gap-4 pt-4">
                 {stats.map((stat, index) => (
                   <div 
                     key={index}
@@ -164,13 +162,13 @@ const projects = [
                 
               
                 <div className="genie-image ">
-                  <img
-                    src={genie}
-                    alt="Digital Marketing Genie"
-                    className="w-full h-500px rounded-3xl "
-                  />
-                  
+                 <img
+                   src={genie}
+                   alt="Digital Marketing Genie"
+                   className="hidden lg:block w-full h-[600px] rounded-3xl"
+                 />
                  
+
                 </div>
 
               </div>
@@ -179,7 +177,7 @@ const projects = [
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce ">
           <div className="w-6 h-10 border-2 border-orange-400 rounded-full flex items-start justify-center p-2">
             <div className="w-1 h-2 bg-orange-500 rounded-full animate-pulse"></div>
           </div>
@@ -214,7 +212,7 @@ const projects = [
       
         <p
           className="
-            max-w-3xl mx-auto text-base text-gray-600
+            max-w-3xl mx-auto text-lg text-gray-600
             leading-relaxed mb-12
             animate-fadeUp animation-delay-400
           "
@@ -235,14 +233,14 @@ const projects = [
         >
          
         </div>
-        <video src={video} muted autoPlay loop className='w-full h-auto'></video>
+        <video src={video} muted autoPlay loop className='w-full h-auto rounded-xl'></video>
 
       </div>
     </section>
    
     <AboutUs/>
 
-     <section className="bg-[#F7F7F7] py-10 md:py-14">
+     <section className="bg-white py-10 md:py-14">
       <div className="max-w-7xl mx-auto px-6">
 
        
@@ -293,7 +291,7 @@ const projects = [
 
                 <p
                   className={`text-base leading-relaxed
-                    ${item.active ? "text-black/80" : "text-gray-300"}`}
+                    ${item.active ? "text-black/100" : "text-gray-100"}`}
                 >
                   {item.desc}
                 </p>
@@ -384,7 +382,7 @@ const projects = [
 
     
 
-    <section className="relative py-10 bg-white overflow-hidden border-t-2">
+    <section className="relative py-10 bg-white overflow-hidden border-y-2">
       
       <h2 className="text-center text-4xl font-bold mb-16">
         Platforms we use
@@ -395,12 +393,12 @@ const projects = [
         <img
           src={wordpress}
           alt="WordPress"
-          className="w-28 md:w-32 hover:scale-110 transition-transform duration-300"
+          className="w-28 md:w-32 hover:scale-110 transition-transform duration-300 -mb-8"
         />
         <img
           src={shopify}
           alt="Shopify"
-          className="w-36 md:w-42 hover:scale-110 transition-transform duration-300"
+          className="w-36 md:w-42 hover:scale-110 transition-transform duration-300 -mb-8"
         />
         <img
           src={code}

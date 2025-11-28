@@ -72,6 +72,7 @@ const Contact = () => {
     
     setTimeout(() => {
       alert('Message sent successfully! We will get back to you soon.');
+      
       setFormData({
         name: '',
         email: '',
@@ -235,6 +236,7 @@ const Contact = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
+            
             <div className={`${isVisible ? 'animate-slideInLeft' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10">
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Send us a Message</h3>
@@ -265,6 +267,7 @@ const Contact = () => {
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-6">
+                    
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
                       <input
@@ -317,10 +320,11 @@ const Contact = () => {
                         <Send size={20} />
                       </>
                     )}
-                  </button>
-                </div>
+                  </button>       
+                </div>           
               </div>
             </div>
+            
 
             <div className={`${isVisible ? 'animate-slideInRight' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden h-full">
