@@ -235,94 +235,103 @@ const Contact = () => {
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            
-            <div className={`${isVisible ? 'animate-slideInLeft' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
+          <div className="grid lg:grid-cols-2 gap-12"> 
+
+           <div className={`${isVisible ? 'animate-slideInLeft' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-                <div className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+                      Send us a Message
+                    </h3>
 
-                  <div className="grid sm:grid-cols-2 gap-6">
+                    <form
+                      action="https://formsubmit.co/contact@kkdigitalgrowth.com"
+                      method="POST"
+                      className="space-y-6"
+                    >
                     
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                        placeholder="Enter Mobile Number"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
-                      <input
-                        type="text"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                        placeholder="Project Inquiry"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Your Message</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows="6"
-                      className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all resize-none"
-                      placeholder="Tell us about your project..."
-                    ></textarea>
-                  </div>
-
-                  <button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting}
-                    className="submit-btn w-full py-4 text-white font-bold rounded-xl text-lg flex items-center justify-center gap-2 relative z-10"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
+                      <input type="hidden" name="_template" value="table" />
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" />
+                  
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Full Name
+                          </label>
+                          <input
+                            type="text"
+                            name="name"
+                            required
+                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
+                            placeholder="John Doe"
+                          />
+                        </div>
+                  
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Email Address
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            
+                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
+                            placeholder="john@example.com"
+                          />
+                        </div>
+                      </div>
+                  
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Phone Number
+                          </label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            required
+                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
+                            placeholder="Enter Mobile Number"
+                          />
+                        </div>
+                  
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Subject
+                          </label>
+                          <input
+                            type="text"
+                            name="subject"
+                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
+                            placeholder="Project Inquiry"
+                          />
+                        </div>
+                      </div>
+                  
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Your Message
+                        </label>
+                        <textarea
+                          name="message"
+                          rows="6"
+                          required
+                          className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all resize-none"
+                          placeholder="Tell us about your project..."
+                        ></textarea>
+                      </div>
+                  
+                      <button
+                        type="submit"
+                        className="submit-btn w-full py-4 text-white font-bold rounded-xl text-lg flex items-center justify-center gap-2 relative z-10"
+                      >
                         Send Message
                         <Send size={20} />
-                      </>
-                    )}
-                  </button>       
-                </div>           
-              </div>
+                      </button>
+                    </form>
+                   
+                  </div>
+
             </div>
             
 

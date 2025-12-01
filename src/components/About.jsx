@@ -3,17 +3,73 @@ import React, { useEffect, useRef, useState } from 'react';
 const AboutUs = () => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [counters, setCounters] = useState([0, 0, 0, 0, 0]);
+  const [barHeights, setBarHeights] = useState([0, 0, 0, 0, 0]);
+
+  const stats = [
+    { 
+      value: 14, 
+      suffix: '+',
+      label: 'Years of Expertise',
+      color: 'bg-[#CFAF03]',
+      maxHeight: 112, // h-28 in pixels
+      height: 'h-28',
+      mobileWidth: 48,
+      delay: 0
+    },
+    { 
+      value: 40, 
+      suffix: '+',
+      label: 'Countries Served',
+      color: 'bg-[#03C2C2]',
+      maxHeight: 128, // h-32 in pixels
+      height: 'h-32',
+      mobileWidth: 62,
+      delay: 80
+    },
+    { 
+      value: 250, 
+      suffix: '+',
+      label: 'Tech Experts On-board',
+      color: 'bg-[#CFAF03]',
+      maxHeight: 192, // h-48 in pixels
+      height: 'h-38',
+      mobileWidth: 106,
+      delay: 150
+    },
+    { 
+      value: 1600, 
+      suffix: '+',
+      label: 'Happy Clients',
+      color: 'bg-[#03C2C2]',
+      maxHeight: 240, // h-60 in pixels
+      height: 'h-60',
+      mobileWidth: 180,
+      delay: 250
+    },
+    { 
+      value: 2500, 
+      suffix: '+',
+      label: 'Projects Delivered',
+      color: 'bg-[#CFAF03]',
+      maxHeight: 256, // h-64 in pixels
+      height: 'h-64',
+      mobileWidth: 260,
+      delay:350
+    }
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !isVisible) {
             setIsVisible(true);
+            setTimeout(() => animateAll(), 300);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -21,50 +77,63 @@ const AboutUs = () => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isVisible]);
 
-  const stats = [
-    { 
-      value: '14+', 
-      label: 'Years of Expertise',
-      color: 'bg-[#CFAF03]',
-      height: 'h-28',
-      mobileWidth: 'w-32',
-      delay: '0s'
-    },
-    { 
-      value: '40+', 
-      label: 'Countries Served',
-      color: 'bg-[#03C2C2]',
-      height: 'h-32',
-      mobileWidth: 'w-40',
-      delay: '0.1s'
-    },
-    { 
-      value: '250+', 
-      label: 'Tech Experts On-board',
-      color: 'bg-[#CFAF03]',
-      height: 'h-48',
-      mobileWidth: 'w-56',
-      delay: '0.2s'
-    },
-    { 
-      value: '1600+', 
-      label: 'Happy Clients',
-      color: 'bg-[#03C2C2]',
-      height: 'h-60',
-      mobileWidth: 'w-72',
-      delay: '0.3s'
-    },
-    { 
-      value: '2500+', 
-      label: 'Projects Delivered',
-      color: 'bg-[#CFAF03]',
-      height: 'h-64',
-      mobileWidth: 'w-78',
-      delay: '0.4s'
-    }
-  ];
+  const animateAll = () => {
+    stats.forEach((stat, index) => {
+      setTimeout(() => {
+        animateCounter(index, stat.value);
+        animateBar(index, stat.maxHeight);
+      }, stat.delay);
+    });
+  };
+
+  const animateCounter = (index, targetValue) => {
+    const duration = 2000;
+    const steps = 80;
+    const increment = targetValue / steps;
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep++;
+      const newValue = Math.min(Math.floor(increment * currentStep), targetValue);
+      
+      setCounters(prev => {
+        const newCounters = [...prev];
+        newCounters[index] = newValue;
+        return newCounters;
+      });
+
+      if (currentStep >= steps) {
+        clearInterval(timer);
+      }
+    }, duration / steps);
+  };
+
+  const animateBar = (index, maxHeight) => {
+    const duration = 2000;
+    const steps = 80;
+    const increment = maxHeight / steps;
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep++;
+      const newHeight = Math.min(increment * currentStep, maxHeight);
+      
+      setBarHeights(prev => {
+        const newHeights = [...prev];
+        newHeights[index] = newHeight;
+        return newHeights;
+      });
+
+      if (currentStep >= steps) {
+        clearInterval(timer);
+      }
+    }, duration / steps);
+  };
+
+  const MAX_MOBILE_VALUE = Math.max(...stats.map(s => s.value));
+
 
   return (
     <>
@@ -72,7 +141,7 @@ const AboutUs = () => {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(16px);
           }
           to {
             opacity: 1;
@@ -102,20 +171,35 @@ const AboutUs = () => {
           }
         }
 
-        @keyframes scaleIn {
-          from {
+        @keyframes bounceIn {
+          0% {
             opacity: 0;
+            transform: scale(0.3);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.05);
+          }
+          70% {
             transform: scale(0.9);
           }
-          to {
-            opacity: 1;
+          100% {
             transform: scale(1);
           }
         }
 
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        @keyframes glow {
+          0%, 100% {
+            box-shadow: 0 0 5px rgba(255, 107, 0, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+          }
         }
+
+        .animate-fadeInUp {
+  animation: fadeInUp 0.4s ease forwards;
+}
 
         .animate-slideInLeft {
           animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -125,25 +209,64 @@ const AboutUs = () => {
           animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        .animate-scaleIn {
-          animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        .animate-bounceIn {
+          animation: bounceIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
         .stat-bar {
-          transition: all 0.3s ease;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-origin: bottom;
         }
 
         .stat-bar:hover {
           transform: scale(1.05);
-          filter: brightness(1.1);
+          filter: brightness(1.15);
+          animation: glow 2s infinite;
+        }
+
+        .stat-bar-horizontal {
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left;
+}
+
+
+        .stat-bar-horizontal:hover {
+          transform: scaleX(1.05);
+          filter: brightness(1.15);
+          animation: glow 2s infinite;
+        }
+
+        .counter-number {
+          transition: all 0.3s ease;
+          display: inline-block;
+        }
+
+        .counter-number.updating {
+          transform: scale(1.1);
+          color: #FF6B00;
+        }
+
+        .stat-label {
+          transition: all 0.3s ease;
+        }
+
+        .stat-container:hover .stat-label {
+          color: #FF6B00;
+          transform: translateY(-5px);
+        }
+
+        .stat-container:hover .counter-number {
+          color: #FF6B00;
+          transform: scale(1.15);
         }
       `}</style>
 
       <section 
         ref={sectionRef}
-        className="bg-gray-100 pt-10 px-6 lg:px-12"  id='about'
+        className="bg-gray-100 pt-10 px-6 lg:px-12"
+        id='about'
       >
-        <div className="max-w-6xl mx-auto ">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className={`mb-8 text-center ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
             <h2 className="text-4xl lg:text-6xl font-bold text-orange-500 mb-3">
@@ -185,52 +308,60 @@ const AboutUs = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="flex-1 flex flex-col items-center"
+                className="flex-1 flex flex-col items-center stat-container"
               >
-                {/* Label and Value on Top */}
-                <div className={`text-center mb-4 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}
-                     style={{ animationDelay: isVisible ? stat.delay : '0s' }}>
-                  <div className="text-3xl lg:text-5xl font-extrabold text-gray-900 mb-2">
-                    {stat.value}
+              
+                <div className={`text-center mb-4 ${isVisible ? 'animate-bounceIn' : 'opacity-0'}`}
+                     style={{ animationDelay: `${stat.delay}ms` }}>
+                  <div className={`text-3xl lg:text-5xl font-extrabold text-gray-900 mb-2 counter-number ${counters[index] > 0 && counters[index] < stat.value ? 'updating' : ''}`}>
+                    {counters[index]}{stat.suffix}
                   </div>
-                  <div className="text-sm lg:text-base text-gray-600 font-medium px-2">
+                  <div className="text-sm lg:text-base text-gray-600 font-medium px-2 stat-label">
                     {stat.label}
                   </div>
                 </div>
 
-                {/* Bar */}
-                <div
-                  className={`stat-bar w-full ${stat.height} ${stat.color} rounded-t-2xl ${
-                    isVisible ? 'animate-scaleIn' : 'opacity-0'
-                  }`}
-                  style={{ animationDelay: isVisible ? stat.delay : '0s' }}
+               
+                <div 
+                  className={`stat-bar w-full ${stat.color} rounded-t-2xl transition-all duration-100 ease-out`}
+                  style={{ 
+                    height: `${barHeights[index]}px`,
+                    maxHeight: `${stat.maxHeight}px`
+                  }}
                 />
               </div>
             ))}
           </div>
 
           {/* Mobile: Horizontal Bars */}
-          <div className="md:hidden space-y-6">
+          <div className="md:hidden space-y-6 pb-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}
-                style={{ animationDelay: isVisible ? stat.delay : '0s' }}
+                className={`stat-container ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}
+                style={{ animationDelay: `${stat.delay}ms` }}
               >
-                {/* Label and Value on Left */}
+               
                 <div className="flex items-center gap-0 mt-5 mb-2">
-                  <div className="text-2xl font-bold text-gray-900 min-w-[80px]">
-                    {stat.value}
+                  <div className={`text-2xl font-bold text-gray-900 min-w-[80px] counter-number ${counters[index] > 0 && counters[index] < stat.value ? 'updating' : ''}`}>
+                    {counters[index]}{stat.suffix}
                   </div>
-                  <div className="text-sm text-gray-600 font-medium">
+                  <div className="text-sm text-gray-600 font-medium stat-label">
                     {stat.label}
                   </div>
                 </div>
 
-                {/* Horizontal Bar */}
-                <div
-                  className={`stat-bar ${stat.mobileWidth} h-8 ${stat.color} rounded-r-2xl`}
+              
+                 <div 
+                  className={`stat-bar-horizontal h-8 ${stat.color} rounded-r-2xl`}
+                  style={{ 
+                    width: isVisible
+                      ? `${(stats[index].value / MAX_MOBILE_VALUE) * 90}%`
+                      : '0%'
+                  }}
                 />
+
+              
               </div>
             ))}
           </div>

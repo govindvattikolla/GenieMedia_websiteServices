@@ -135,7 +135,7 @@ const projects = [
                   Get Started
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                 </button>
-                <button className="w-42 sm:w-50 btn-secondary relative px-6 py-4 text-orange-600 font-bold rounded-full text-base flex items-center justify-center gap-2 z-10">
+                <button className="w-42 sm:w-50 btn-secondary relative px-6 py-4 text-orange-600 font-bold rounded-full text-base flex items-center justify-center gap-2 z-10" >
                  See Portfolio
                 </button>
               </div>
