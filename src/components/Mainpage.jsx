@@ -12,10 +12,11 @@ import wordpress from "../assets/wordpress.png"
 import shopify from "../assets/shopify.webp"
 import code from "../assets/code.png"
 import AboutUs from './About';
-import Testimonials from './Testimonial';
+// import Testimonials from './Testimonial';
 import Contact from './contact';
 import ServicesSection from './Services';
 import video from "../assets/WebsiteVideo_2.mp4"
+import VideoTestimonials2 from './testimonials2';
 const Mainpage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -33,19 +34,19 @@ const Mainpage = () => {
   {
     step: "Step 01",
     title: "Research & Planning",
-    desc: "Proper inspection of a website with the best tools for the next stage.",
+    desc: "We analyze user needs, business goals, and industry benchmarks using advanced tools to build a clear, scalable websites .",
     active: false,
   },
   {
     step: "Step 02",
-    title: "Implementation",
-    desc: "Optimizing the website with special strategies by covering all its needs.",
+    title: "Design & Implementation",
+    desc: "Our team designs and develops a high-performance website using smart strategiesand modern technologies.",
     active: true,
   },
   {
     step: "Step 03",
-    title: "Result",
-    desc: "Expert analysis of website data for deploying a strategy for further growth.",
+    title: "Results & Growth",
+    desc: "We track performance, analyze real user data, and refine strategies to ensure continuous growth and long-term success.",
     active: false,
   },
 ];
@@ -122,20 +123,22 @@ const projects = [
               <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-normal ">
                 Transform Your{' '}
                 <span className="gradient-text">Digital Presence</span>{' '}
-                with{' '} Innovation
+               with Excellence
+                
               </h1>
 
               <p className="hero-description text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                We bring your brand to life with cutting-edge digital marketing strategies, 
-                stunning web design, and innovative solutions that deliver real results.
+                At Genie Media & Studio, we bring brands to life by pairing thoughtful strategy with stories that feel alive and 
+                real. Every project blends creativity, technology, and purposeful content, shaping digital experiences that stay clear, stay consistent, and leave a lasting impact.
+
               </p>
 
               <div className="hero-buttons flex flex-row sm:flex-row gap-4 w-80% justify-center lg:justify-start ">
-                <button className="w-42 sm:w-56 btn-primary group relative px-5 py-4 text-white font-bold rounded-full text-base shadow-xl flex items-center justify-center gap-2 z-10">
+                <button className="w-42 sm:w-56 btn-primary group relative px-5 py-4 text-white font-bold rounded-full text-base shadow-xl flex items-center justify-center gap-2 z-10" onClick={() => window.location.href="https://wa.me/919966888428"}>
                   Get Started
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                 </button>
-                <button className="w-42 sm:w-50 btn-secondary relative px-6 py-4 text-orange-600 font-bold rounded-full text-base flex items-center justify-center gap-2 z-10" >
+                <button className="w-42 sm:w-50 btn-secondary relative px-6 py-4 text-orange-600 font-bold rounded-full text-base flex items-center justify-center gap-2 z-10" onClick={() => window.location.href="#projects"}>
                  See Portfolio
                 </button>
               </div>
@@ -193,7 +196,7 @@ const projects = [
             animate-fadeUp
           "
         >
-          CREATIVE & STRATEGIC UI/UX DESIGN & DEV SERVICES COMPANY
+          CREATIVE & STRATEGIC DIGITAL MARKETING COMPANY 
         </p>
 
       
@@ -204,9 +207,9 @@ const projects = [
             mb-8 animate-fadeUp animation-delay-200
           "
         >
-          We Design Software That <br />
-          Performs For Users and <br />
-          Businesses
+        We Build Digital Stories That 
+              <br /> 
+          Connect & Grow Brands
         </h1>
 
       
@@ -217,11 +220,10 @@ const projects = [
             animate-fadeUp animation-delay-400
           "
         >
-          We specialize in offering UI/UX design services that turn complex
-          workflows into smooth experiences that retain users and deliver
-          measurable ROI. By leveraging data-driven insights, AI-powered design
-          strategies, and scalable design systems, we ensure your product is
-          intuitive, consistent, and ready to grow.
+         We craft digital journeys that feel natural, human, and memorable. From strategy to 
+         design and content, we help your brand rise above the noise, stay true to its voice, 
+         and build trust across every platform.
+
         </p>
 
        
@@ -434,6 +436,7 @@ const projects = [
               shadow-lg
               w-full sm:w-auto  
           "
+          onClick={() => window.location.href="https://wa.me/919966888428"}
         >
           Need help to upscale your brand
           <span className="text-xl font-bold">→</span>
@@ -444,7 +447,7 @@ const projects = [
     </section>
 
    
-    <Testimonials/>
+    <VideoTestimonials2/>
     <Contact/>
   
     </>

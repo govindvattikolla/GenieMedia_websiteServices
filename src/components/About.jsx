@@ -273,7 +273,7 @@ const AboutUs = () => {
               About Us
             </h2>
             <p className="text-lg lg:text-xl text-gray-800">
-              Crafting cutting-edge digital solutions with creative minds
+              Crafting powerful digital experiences with creative minds
             </p>
           </div>
 
@@ -285,9 +285,10 @@ const AboutUs = () => {
                 Who We Are
               </h3>
               <p className="text-base lg:text-lg text-gray-800 leading-relaxed">
-                A Mindful team of tech innovators bringing world-class tech ideas to reality. 
-                We embrace the power of technology to provide cutting-edge digital solutions 
-                that propel our clients toward unprecedented success.
+                A dedicated team of digital creators helping brands grow with clarity, creativity, and purpose.
+                At Genie Media & Studio, we blend strategy, design, content, and technology to create work that
+                 speaks to people, stays with them, and supports lasting success.
+
               </p>
             </div>
 
@@ -297,14 +298,16 @@ const AboutUs = () => {
                 What Drives Us?
               </h3>
               <p className="text-base lg:text-lg text-gray-800 leading-relaxed">
-                Creativity is our heartbeat. We constantly challenge ourselves to further our 
-                technical prowess and help our customers to deliver exceptional customer experience.
+               <b> Creativity fuels every move we make. </b>
+                We think with intention, create with heart, and keep raising the bar day after day.
+                Our mission is simple: help brands shape meaningful experiences that people remember, trust, and genuinely enjoy.
+
               </p>
             </div>
           </div>
 
           {/* Desktop: Vertical Bars */}
-          <div className="hidden md:flex items-end justify-center gap-8">
+          <div className="hidden md:flex items-end justify-center gap-8 mt-6">
             {stats.map((stat, index) => (
               <div
                 key={index}

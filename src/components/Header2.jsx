@@ -75,14 +75,24 @@ const Header2 = () => {
 
             {/* CTA Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-3 cta-buttons">
+              <a href="tel:+919966888428">
               <button className="btn-secondary relative px-5 py-2.5 text-orange-600 font-semibold rounded-full text-sm flex items-center gap-2 z-10">
                 <Phone size={16} />
                 Book a Call
-              </button>
-              <button className="btn-primary px-6 py-2.5 text-white font-semibold rounded-full text-sm flex items-center gap-2 shadow-lg relative z-10">
-                <Mail size={16} />
-                Contact Us
-              </button>
+              </button> </a>
+            
+              <button
+  onClick={() => {
+    window.location.href = '#contact';
+  }}
+  className="btn-primary px-6 py-2.5 text-white font-semibold rounded-full text-sm flex items-center gap-2 shadow-lg"
+>
+  <Mail size={16} />
+  Contact Us
+</button>
+
+              
+           
             </div>
 
             {/* Mobile Menu Button */}

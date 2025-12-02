@@ -42,7 +42,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['contact@digimarketing.com'],
+      details: ['contact@kkdigitalgrowth.com'],
       color: 'from-red-500 to-red-600'
     },
     {
@@ -199,7 +199,7 @@ const Contact = () => {
 
       <section 
         ref={sectionRef}
-        className="relative bg-gray-100 py-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative bg-gray-100 py-10 px-4 sm:px-6 lg:px-8 overflow-hidden" id='contact'
       >
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-20 right-10 w-96 h-96 bg-orange-200 rounded-full blur-3xl opacity-20"></div>

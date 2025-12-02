@@ -95,7 +95,7 @@ export default function ServicesSection() {
 
         
         <div className="text-center mt-10">
-          <button className="bg-orange-400 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-black-500/50 transform hover:scale-105 transition-all duration-300">
+          <button className="bg-orange-400 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-black-500/50 transform hover:scale-105 transition-all duration-300" onClick={() => window.location.href="https://wa.me/919966888428"}>
             Start Your Project
           </button>
         </div>
