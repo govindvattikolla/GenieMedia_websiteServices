@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Star, Play, Pause, Volume2, VolumeX, Maximize2, Quote } from 'lucide-react';
 
-const VideoTestimonials2 = () => {
+const VideoTestimonials = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState({});
@@ -519,4 +519,4 @@ const VideoTestimonials2 = () => {
   );
 };
 
-export default VideoTestimonials2;
+export default VideoTestimonials;

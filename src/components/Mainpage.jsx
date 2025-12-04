@@ -16,7 +16,7 @@ import AboutUs from './About';
 import Contact from './contact';
 import ServicesSection from './Services';
 import video from "../assets/WebsiteVideo_2.mp4"
-import VideoTestimonials2 from './testimonials2';
+import VideoTestimonials2 from './Testimonials2';
 const Mainpage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -25,7 +25,7 @@ const Mainpage = () => {
   }, []);
 
   const stats = [
-    { icon: Users, value: '500+', label: 'Happy Clients' },
+    { icon: Users, value: '600+', label: 'Happy Clients' },
     { icon: Award, value: '98%', label: 'Success Rate' },
     { icon: TrendingUp, value: '250%', label: 'ROI Average' }
   ];
