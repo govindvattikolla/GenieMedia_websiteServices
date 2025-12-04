@@ -12,29 +12,29 @@ const VideoTestimonials2 = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "CEO, TechStartup Inc",
-      company: "TechStartup",
+      name: "Dr.Sailaja",
+      // role: "CEO, TechStartup Inc",
+      company: "Lawer",
       rating: 5,
       // thumbnail: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=400&fit=crop",
       videoUrl: "https://www.youtube.com/embed/gMpv78iIFz0?si=Llj0RhUJEwZ7aF4E",
-      quote: "Working with this team transformed our digital presence completely!"
+      quote: "Wonderful design and implemenation of my website with thoroughly giving suggestions and clarifying doubts."
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "Marketing Director",
-      company: "E-Shop Global",
+      name: "Suraj",
+      // role: "Marketing Director",
+      company: "Communication Coach",
       rating: 5,
       // thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
       videoUrl: "https://www.youtube.com/embed/4xgHJgz_8uY?si=7ASuer9xK5DC9cNI",
-      quote: "Outstanding results! Our ROI increased by 300% in just 3 months."
+      quote: "Outstanding results! Excellent colors representation and Design i loved the website."
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      role: "Founder",
-      company: "Fashion Forward",
+      name: "Deepak kumar sharma",
+      // role: "Founder",
+      company: "Neutritionist",
       rating: 5,
       // thumbnail: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=400&fit=crop",
       videoUrl: "https://www.youtube.com/embed/mUpfyEFMpeY?si=61W5yvmrPCF3c7pt",
@@ -42,19 +42,19 @@ const VideoTestimonials2 = () => {
     },
     {
       id: 4,
-      name: "David Park",
-      role: "CTO",
-      company: "InnovateTech",
+      name: "Heena M shrivastava",
+      // role: "CTO",
+      company: "Book Author & Coach",
       rating: 5,
       // thumbnail: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=400&fit=crop",
       videoUrl: "https://www.youtube.com/embed/poK_yAMsmUQ?si=xVO0u7tIfFjciOCH",
-      quote: "Best investment we've made for our digital transformation!"
+      quote: "I'm  worried about my website design & getting no traffic Then karthik came and delivered such a beautiful website for me."
     },
     {
       id: 5,
-      name: "Lisa Anderson",
-      role: "Brand Manager",
-      company: "Luxury Boutique",
+      name: "kedhar panda",
+      // role: "Brand Manager",
+      company: "Book Author & Coach",
       rating: 5,
       // thumbnail: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=400&fit=crop",
       videoUrl: "https://www.youtube.com/embed/oGxKBpu7x1I?si=lz8JXzvyiUnF6T9C",
@@ -464,7 +464,7 @@ const VideoTestimonials2 = () => {
                           </p>
 
                          
-                          <div className="pt-4 border-t border-gray-100">
+                          <div className="pt-2 border-t border-gray-100">
                             <h4 className="text-lg font-bold text-gray-900">
                               {testimonial.name}
                             </h4>

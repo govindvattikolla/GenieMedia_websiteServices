@@ -134,7 +134,7 @@ const projects = [
               </p>
 
               <div className="hero-buttons flex flex-row sm:flex-row gap-4 w-80% justify-center lg:justify-start ">
-                <button className="w-42 sm:w-56 btn-primary group relative px-5 py-4 text-white font-bold rounded-full text-base shadow-xl flex items-center justify-center gap-2 z-10" onClick={() => window.location.href="https://wa.me/919966888428"}>
+                <button className="w-42 sm:w-56 btn-primary group relative px-5 py-4 text-white font-bold rounded-full text-base shadow-xl flex items-center justify-center gap-2 z-10" onClick={() => window.location.href="https://wa.me/919032845433"}>
                   Get Started
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                 </button>
@@ -436,7 +436,7 @@ const projects = [
               shadow-lg
               w-full sm:w-auto  
           "
-          onClick={() => window.location.href="https://wa.me/919966888428"}
+          onClick={() => window.location.href="https://wa.me/919032845433"}
         >
           Need help to upscale your brand
           <span className="text-xl font-bold">→</span>

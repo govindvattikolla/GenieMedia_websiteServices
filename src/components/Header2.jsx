@@ -75,7 +75,7 @@ const Header2 = () => {
 
             {/* CTA Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-3 cta-buttons">
-              <a href="tel:+919966888428">
+              <a href="tel:+919032845433">
               <button className="btn-secondary relative px-5 py-2.5 text-orange-600 font-semibold rounded-full text-sm flex items-center gap-2 z-10">
                 <Phone size={16} />
                 Book a Call

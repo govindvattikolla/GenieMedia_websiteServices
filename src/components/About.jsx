@@ -8,7 +8,7 @@ const AboutUs = () => {
 
   const stats = [
     { 
-      value: 14, 
+      value: 10, 
       suffix: '+',
       label: 'Years of Expertise',
       color: 'bg-[#CFAF03]',
@@ -18,7 +18,7 @@ const AboutUs = () => {
       delay: 0
     },
     { 
-      value: 40, 
+      value: 20, 
       suffix: '+',
       label: 'Countries Served',
       color: 'bg-[#03C2C2]',
@@ -28,7 +28,7 @@ const AboutUs = () => {
       delay: 80
     },
     { 
-      value: 250, 
+      value: 150, 
       suffix: '+',
       label: 'Tech Experts On-board',
       color: 'bg-[#CFAF03]',
@@ -38,7 +38,7 @@ const AboutUs = () => {
       delay: 150
     },
     { 
-      value: 1600, 
+      value: 600, 
       suffix: '+',
       label: 'Happy Clients',
       color: 'bg-[#03C2C2]',
@@ -48,7 +48,7 @@ const AboutUs = () => {
       delay: 250
     },
     { 
-      value: 2500, 
+      value: 1000, 
       suffix: '+',
       label: 'Projects Delivered',
       color: 'bg-[#CFAF03]',
@@ -284,7 +284,7 @@ const AboutUs = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                 Who We Are
               </h3>
-              <p className="text-base lg:text-lg text-gray-800 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-700 leading-relaxed">
                 A dedicated team of digital creators helping brands grow with clarity, creativity, and purpose.
                 At Genie Media & Studio, we blend strategy, design, content, and technology to create work that
                  speaks to people, stays with them, and supports lasting success.
@@ -297,7 +297,7 @@ const AboutUs = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                 What Drives Us?
               </h3>
-              <p className="text-base lg:text-lg text-gray-800 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-700 leading-relaxed">
                <b> Creativity fuels every move we make. </b>
                 We think with intention, create with heart, and keep raising the bar day after day.
                 Our mission is simple: help brands shape meaningful experiences that people remember, trust, and genuinely enjoy.
